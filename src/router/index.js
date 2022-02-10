@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
-import User from '@/views/User.vue'
 import NotFound from '@/views/NotFound.vue'
-import UserGeneric from '@/views/UserGeneric.vue'
+import NumberSection from '@/views/NumberSection.vue'
+import NonNumberSection from '@/views/NonNumberSection.vue'
 
 const routes = [
 	{
@@ -17,11 +17,15 @@ const routes = [
 		component: About
 	},
 	{
-		path: '/user/:id',
-		component: User
+		path: '/this-is/:orderId(\\d+)',
+		component: NumberSection,
+		props: true
 	},
-	// will match anything starting with `/user-` and put it under `$route.params.afterUser`
-	{ path: '/usergeneric:afterUser(.*)', component: UserGeneric },
+	{
+		path: '/this-is/:str',
+		component: NonNumberSection,
+		props: true
+	},
 	{
 		path: '/:pathMatch(.*)*',
 		component: NotFound
