@@ -16,7 +16,7 @@ const routes = [
   },
 	{
     path: '/user/:id',
-    name: 'About',
+    name: 'User',
 		component: User,
 		props: true,
   },
