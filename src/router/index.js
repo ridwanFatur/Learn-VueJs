@@ -4,7 +4,7 @@ import store from "../store";
 import Home from "../views/Home.vue";
 // import Register from "../views/Register";
 import Login from "../views/Login";
-// import Posts from "../views/Posts";
+import Posts from "../views/Posts";
 
 Vue.use(VueRouter);
 
@@ -26,12 +26,12 @@ const routes = [
     component: Login,
     meta: { guest: true },
   },
-  // {
-  //   path: "/posts",
-  //   name: "Posts",
-  //   component: Posts,
-  //   meta: { requiresAuth: true },
-  // },
+  {
+    path: "/posts",
+    name: "Posts",
+    component: Posts,
+    meta: { requiresAuth: true },
+  },
 ];
 
 const router = new VueRouter({

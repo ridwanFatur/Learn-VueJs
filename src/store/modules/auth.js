@@ -21,7 +21,8 @@ const actions = {
   },
 
   async LogIn({commit}, user) {
-    await axios.post("login", user);
+    // await axios.post("login", user);
+		await axios.post("posts");
     await commit("setUser", user.get("username"));
   },
 
