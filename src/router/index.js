@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import About from '@/views/About.vue'
+import Count from '@/views/Count.vue'
 
 const routes = [
 	{
@@ -15,6 +16,10 @@ const routes = [
 		component: About
 	},
 	{ path: '/home', redirect: '/' },
+	{
+		path: '/count',
+		component: Count
+	},
 ]
 
 const router = createRouter({
