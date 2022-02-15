@@ -34,6 +34,30 @@ const store = createStore({
 		incrementObjectStyle(state, payload) {
 			state.count += payload.amount
 		},
+	},
+	actions: {
+		// increment(context) {
+		// 	context.commit('increment')
+		// }
+		increment({ commit }) {
+			commit('increment')
+		},
+		incrementAsync({ commit }) {
+			setTimeout(() => {
+				commit('increment')
+			}, 1000)
+		},
+		incrementWithPayload({ commit }, payload) {
+			commit('incrementWithPayload', payload.amount)
+		},
+		actionAsync({ commit }) {
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					commit('increment')
+					resolve()
+				}, 1000)
+			})
+		}
 	}
 })
 
