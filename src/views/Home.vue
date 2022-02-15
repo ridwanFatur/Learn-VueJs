@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <button v-on:click="testing">Test</button>
     <button v-on:click="increment">Increment</button>
+    <button v-on:click="incrementPayload">Increment 10</button>
     <button v-on:click="print">Print todo done</button>
     <button v-on:click="testMapGetter">Test Map Getter</button>
   </div>
@@ -27,7 +28,7 @@ export default {
     testMapGetter: function () {
       // console.log(this.doneCount);
       // console.log(this.doneList);
-			console.log(this.doneTodosCount);
+      console.log(this.doneTodosCount);
       console.log(this.doneTodos);
     },
     testing: function () {
@@ -36,6 +37,13 @@ export default {
     },
     increment: function () {
       this.$store.commit("increment");
+    },
+    incrementPayload: function () {
+      // this.$store.commit("incrementWithPayload", 10);
+      this.$store.commit({
+        type: "incrementObjectStyle",
+        amount: 10,
+      });
     },
     print: function () {
       console.log("Print");

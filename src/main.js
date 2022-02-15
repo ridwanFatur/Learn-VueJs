@@ -27,7 +27,13 @@ const store = createStore({
 	mutations: {
 		increment(state) {
 			state.count++
-		}
+		},
+		incrementWithPayload(state, n) {
+			state.count += n
+		},
+		incrementObjectStyle(state, payload) {
+			state.count += payload.amount
+		},
 	}
 })
 
